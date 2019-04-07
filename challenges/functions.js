@@ -8,24 +8,49 @@
 */
 
 
+const consume = function(x, y, cb ){
+  return cb(x,y);
+};
+let minus = function(x,y){
+ console.log(x-y);
+};
+
+consume(5, 6, minus);
+
+
+
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
+let add= function(x,y){
+  console.log(x+y);
+};
+
+let multiply = function(x,y){
+  console.log(x*y);
+}
+
+
+let greeting = function(x,y){
+  console.log('Hello, ' + x + ' '+ y+ ', Nice to meet you!');
+};
+
+
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-// consume(2,2,add); // 4
-// consume(10,16,multiply); // 160
-// consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+consume(2,2,add); // 4
+consume(10,16,multiply); // 160
+consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ==== 
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
-// Explanation: 
+// Explanation: Variable internal is a parent to nested function, so nested function can reach back to internal and pull data from there. 
 
 
 const external = "I'm outside the function";
